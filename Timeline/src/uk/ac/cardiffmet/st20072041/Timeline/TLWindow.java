@@ -1,3 +1,4 @@
+package uk.ac.cardiffmet.st20072041.Timeline;
 import java.awt.EventQueue;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -24,10 +25,6 @@ import java.awt.Color;
 import java.awt.Event;
 
 import javax.swing.JPanel;
-
-import uk.ac.cardiffmet.st20072041.Timeline.EventWithFigure;
-import uk.ac.cardiffmet.st20072041.Timeline.HistoricalFigure;
-
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;

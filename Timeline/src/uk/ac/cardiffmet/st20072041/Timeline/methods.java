@@ -1,3 +1,4 @@
+package uk.ac.cardiffmet.st20072041.Timeline;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -14,9 +15,6 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import com.google.gson.Gson;
-
-import uk.ac.cardiffmet.st20072041.Timeline.EventWithFigure;
-import uk.ac.cardiffmet.st20072041.Timeline.HistoricalFigure;
 
 /**
  * @author adam araru
