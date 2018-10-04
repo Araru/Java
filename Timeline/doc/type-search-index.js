@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"uk.ac.cardiffmet.st20072041.Timeline","l":"Event"},{"p":"uk.ac.cardiffmet.st20072041.Timeline","l":"EventWithFigure"},{"p":"uk.ac.cardiffmet.st20072041.Timeline","l":"HistoricalFigure"},{"p":"<Unnamed>","l":"methods"},{"p":"test","l":"PersonTest"},{"p":"<Unnamed>","l":"TLWindow"}]
