@@ -135,6 +135,7 @@ public class methods {
 		if(isvalid) {//if the fields are valid and have been filled in add to array
 			EventWithFigure newEvent = new  EventWithFigure(TLWindow.getFigureList().get(TLWindow.cmbFigure.getSelectedIndex()), inv, date, title, description);
 			TLWindow.eventList.add(newEvent);
+			saveToJson();
 		}
 	}
 	

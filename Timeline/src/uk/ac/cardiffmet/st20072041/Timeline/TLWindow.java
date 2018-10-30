@@ -2,6 +2,7 @@ package uk.ac.cardiffmet.st20072041.Timeline;
 import java.awt.EventQueue;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.Shape;
 import java.awt.color.*;
 
@@ -26,6 +27,7 @@ import java.awt.Event;
 
 import javax.swing.JPanel;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.geom.Ellipse2D;
@@ -125,19 +127,19 @@ public class TLWindow {
 		//run method to load json file
 		methods.loadJson();
 		frame = new JFrame();
-		frame.setBounds(100, 100, 810, 362);
+		frame.setBounds(100, 100, 810, 500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(new CardLayout(0, 0));
 		
 		//create jpanel
 		pnlTimeline = new JPanel();
-		pnlTimeline.setBackground(new Color(51, 204, 0));
+		pnlTimeline.setBackground(Color.WHITE);
 		frame.getContentPane().add(pnlTimeline, "name_452855020230537");
 		pnlTimeline.setLayout(null);
 		pnlTimeline.setVisible(true);
 		
 		pnlAddEvent = new JPanel();
-		pnlAddEvent.setBackground(new Color(51, 204, 0));
+		pnlAddEvent.setBackground(new Color(128, 128, 128));
 		frame.getContentPane().add(pnlAddEvent, "name_452860503633825");
 		pnlAddEvent.setLayout(null);
 		//this panel is not visible at first
@@ -180,7 +182,7 @@ public class TLWindow {
 		pnlTimeline.add(btnNext);
 		
 		cmbFigure = new JComboBox();
-		cmbFigure.setBounds(51, 195, 86, 20);
+		cmbFigure.setBounds(51, 245, 110, 32);
 		for (HistoricalFigure person : getFigureList()) {
 			cmbFigure.addItem(person.getName());//add the persons names to the coboBox
 		}
@@ -229,6 +231,7 @@ public class TLWindow {
 		lblWorldWar.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lblWorldWar.setBounds(156, 11, 249, 31);
 		pnlTimeline.add(lblWorldWar);
+		Image img = new ImageIcon(this.getClass().getResource("/world war.jpg")).getImage();
 		
 		btnDoneAdding = new JButton ("Done");
 		btnDoneAdding.setFont(new Font("Tahoma", Font.PLAIN, 16));
@@ -237,7 +240,7 @@ public class TLWindow {
 			methods.addEvent();//add event method called
 		}
 		});
-		btnDoneAdding.setBounds(416, 202, 89, 23);
+		btnDoneAdding.setBounds(51, 397, 89, 23);
 		pnlAddEvent.add(btnDoneAdding);
 		
 		txtEventYear = new JTextField();
@@ -258,46 +261,41 @@ public class TLWindow {
 		txtEventTitle.setBounds(160, 25, 229, 20);
 		pnlAddEvent.add(txtEventTitle);
 		
-		JButton btnSave = new JButton("Save");
-		btnSave.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		btnSave.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				methods.saveToJson();}});//call method to save to json
-		btnSave.setBounds(527, 202, 89, 23);
-		pnlAddEvent.add(btnSave);
-		
 		JButton btnBack = new JButton("Back");
 		btnBack.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				pnlTimeline.setVisible(true);
 				pnlAddEvent.setVisible(false);}});
-		btnBack.setBounds(639, 202, 89, 23);
+		btnBack.setBounds(249, 397, 89, 23);
 		pnlAddEvent.add(btnBack);
 		
 		JLabel lblYear = new JLabel("Year");
-		lblYear.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblYear.setBounds(51, 11, 54, 14);
+		lblYear.setForeground(Color.WHITE);
+		lblYear.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lblYear.setBounds(51, 10, 54, 14);
 		pnlAddEvent.add(lblYear);
 		
 		JLabel lblTitle = new JLabel("Event Title");
-		lblTitle.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblTitle.setBounds(160, 11, 89, 14);
+		lblTitle.setForeground(Color.WHITE);
+		lblTitle.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lblTitle.setBounds(160, 11, 102, 14);
 		pnlAddEvent.add(lblTitle);
 		
 		JLabel lblDescription = new JLabel("Description of Event");
-		lblDescription.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblDescription.setBounds(51, 68, 161, 14);
+		lblDescription.setForeground(Color.WHITE);
+		lblDescription.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lblDescription.setBounds(51, 68, 196, 14);
 		pnlAddEvent.add(lblDescription);
 		
 		JLabel lblHistoricalFigure = new JLabel("Historical Figure");
 		lblHistoricalFigure.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblHistoricalFigure.setBounds(51, 170, 124, 14);
+		lblHistoricalFigure.setBounds(48, 220, 124, 14);
 		pnlAddEvent.add(lblHistoricalFigure);
 		
 		JLabel lblInvolvment = new JLabel("Involvement of Historical Figure");
 		lblInvolvment.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblInvolvment.setBounds(180, 170, 242, 14);
+		lblInvolvment.setBounds(182, 220, 242, 14);
 		pnlAddEvent.add(lblInvolvment);
 		
 		JLabel lblOnceReadyPlease = new JLabel("Once ready please click done then save. \r\n");
@@ -311,7 +309,8 @@ public class TLWindow {
 		pnlAddEvent.add(txtEventDescription);
 		
 		txtInvolvment = new JTextArea();
-		txtInvolvment.setBounds(180, 193, 226, 119);
+		txtInvolvment.setBackground(Color.WHITE);
+		txtInvolvment.setBounds(182, 243, 226, 119);
 		pnlAddEvent.add(txtInvolvment);
 		
 	}
