@@ -65,7 +65,7 @@ public class methods {
 	 */
 	public static void saveToJson() {
 		String result = "";//empty string
-		JSONArray array = new  JSONArray();//json array
+		JSONArray array = new  JSONArray();//json array jjj
 		
 		for (EventWithFigure e : TLWindow.eventList) {
 			JSONObject eventObject = new JSONObject();//create json object
